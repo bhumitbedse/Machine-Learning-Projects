@@ -27,8 +27,8 @@ mail = Mail(app)
 
 app.config["MAIL_SERVER"]='smtp.gmail.com'  
 app.config["MAIL_PORT"] = 465      
-app.config["MAIL_USERNAME"] = "ripperjohn535@gmail.com"  
-app.config['MAIL_PASSWORD'] = "johnripper12"  
+app.config["MAIL_USERNAME"] = your_email  
+app.config['MAIL_PASSWORD'] = your_password
 app.config['MAIL_USE_TLS'] = False  
 app.config['MAIL_USE_SSL'] = True  
 mail = Mail(app)  
@@ -94,7 +94,7 @@ def verify():
     session['name'] =  request.form.get('name') 
     session['email']=request.form.get('uemail')
     session['password']=request.form.get('upassword') 
-    msg = Message('OTP',sender = 'ripperjohn535@gmail.com', recipients = [email])  
+    msg = Message('OTP',sender = 'xyz@gmail.com', recipients = [email])  
     msg.body = "Your Verification Code is : " + str(otp)  
     mail.send(msg)  
     return render_template('verify.html')  
